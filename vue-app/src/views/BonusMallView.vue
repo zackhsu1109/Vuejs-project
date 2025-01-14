@@ -24,11 +24,6 @@ const searchKeyword = ref('');
 const click = idx => {
     currentIndex.value = idx;
     currentTab.value = tabs.value[idx].component;
-
-    // 如果切換到搜尋結果 tab，清空搜尋關鍵字
-    if (idx === tabs.value.length - 1) {
-        searchKeyword.value = ''; // 清空搜尋關鍵字以便重新搜尋
-    }
 };
 
 // 處理搜尋
