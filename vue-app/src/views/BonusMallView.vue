@@ -50,7 +50,7 @@ const handleSearch = () => {
                 class="nav-link" 
                 :class="{ active: currentIndex === index }" 
                 href="#"
-                @click="click(index)"
+                @click.prevent="click(index)"
               >
                 {{ tab.name }}
               </a>
@@ -60,7 +60,7 @@ const handleSearch = () => {
             <input 
               class="form-control me-2" 
               type="search" 
-              placeholder="搜尋物品" 
+              placeholder="搜尋商品" 
               aria-label="Search"
               v-model="searchKeyword"
               style="width: 200px;" 
@@ -108,7 +108,23 @@ const handleSearch = () => {
   font-size: 14px;
 }
 
-.navbar-nav .nav-item .nav-link.active {
-  color: #007BFF;
+/* 使用更具體的選擇器來設置 navbar 背景顏色 */
+.navbar {
+  background-color: #9D9D9D !important; /* 深一點的灰色 */
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: white; /* 白色字體 */
+}
+
+/* 滑鼠懸停時改變背景顏色 */
+.navbar-nav .nav-item .nav-link:hover {
+  background-color: #DB5009; /* 滑鼠懸停時背景顏色為橘色 */
+}
+
+/* 確保點擊後不改變字體顏色 */
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:hover {
+   color: white; /* 確保字體顏色保持為白色 */
 }
 </style>
