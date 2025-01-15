@@ -2,28 +2,6 @@
   <div>
       <div class="row mt-4"></div> <!--往下一點-->
 
-      <!-- 分頁按鈕 -->
-      <nav aria-label="Page navigation example" class="mb-4">
-          <ul class="pagination justify-content-center">
-              <li class="page-item" :class="{ disabled: currentPage === 1 }">
-                  <a class="page-link" href="#" @click.prevent="prevPage"><</a>
-              </li>
-
-              <li 
-                  class="page-item" 
-                  v-for="page in totalPages" 
-                  :key="page" 
-                  :class="{ active: currentPage === page }"
-              >
-                  <a class="page-link" href="#" @click.prevent="goToPage(page)">{{ page }}</a>
-              </li>
-
-              <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-                  <a class="page-link" href="#" @click.prevent="nextPage">></a>
-              </li>
-          </ul>
-      </nav>
-
       <div class="row">
           <div class="col-3" v-for="product in paginatedProducts" :key="product.productno">
               <div class="card" style="width: 18rem; border: none;"> <!-- 去掉card的外框顏色 -->
@@ -43,6 +21,28 @@
               </div>
           </div>
       </div>
+
+        <!-- 分頁按鈕 -->
+        <nav aria-label="Page navigation example" class="mb-4">
+          <ul class="pagination justify-content-center">
+              <li class="page-item" :class="{ disabled: currentPage === 1 }">
+                  <a class="page-link" href="#" @click.prevent="prevPage"><</a>
+              </li>
+
+              <li 
+                  class="page-item" 
+                  v-for="page in totalPages" 
+                  :key="page" 
+                  :class="{ active: currentPage === page }"
+              >
+                  <a class="page-link" href="#" @click.prevent="goToPage(page)">{{ page }}</a>
+              </li>
+
+              <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+                  <a class="page-link" href="#" @click.prevent="nextPage">></a>
+              </li>
+          </ul>
+      </nav>
 
   </div>
 </template>

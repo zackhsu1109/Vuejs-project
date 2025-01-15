@@ -2,6 +2,26 @@
     <div>
         <div class="row mt-4"></div> <!--往下一點-->
 
+        <div class="row mt-4">
+            <div class="col-3" v-for="product in paginatedProducts" :key="product.productno">
+                <div class="card" style="width: 18rem; border: none;">
+                    <div class="product-image-wrapper" style="border: 1px solid lightgray; padding: 5px;">
+                        <img :src="'http://localhost:8081' + product.productimage" class="card-img-top" alt="product image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.productname }}</h5> 
+                        <div style="display: flex; align-items: center; font-size: 18px;">
+                            <img src="http://localhost:8081/BonusMallPic/point.jpg" alt="point image" class="point-img">
+                            <span class="point-text">{{ product.cost }} 點</span>
+                        </div>
+
+                        <!-- margin-bottom 點數跟按鈕的間隔 -->
+                        <a href="#" class="btn mt-2" style="background-color: #ff5733; color: white;">兌換商品</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 分頁按鈕 -->
         <nav aria-label="Page navigation example" class="mb-4">
             <ul class="pagination justify-content-center">
@@ -23,28 +43,6 @@
                 </li>
             </ul>
         </nav>
-
-        <div class="row mt-4">
-            <div class="col-3" v-for="product in paginatedProducts" :key="product.productno">
-                <div class="card" style="width: 18rem; border: none;">
-                    <div class="product-image-wrapper" style="border: 1px solid lightgray; padding: 5px;">
-                        <img :src="'http://localhost:8081' + product.productimage" class="card-img-top" alt="product image">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.productname }}</h5> 
-                        <div style="display: flex; align-items: center; font-size: 18px;">
-                            <img src="http://localhost:8081/BonusMallPic/point.jpg" alt="point image" class="point-img">
-                            <span class="point-text">{{ product.cost }} 點</span>
-                        </div>
-
-                        <!-- margin-bottom 點數跟按鈕的間隔 -->
-                        <a href="#" class="btn mt-2" style="background-color: #ff5733; color: white;">兌換商品</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
 
     </div>
 </template>
