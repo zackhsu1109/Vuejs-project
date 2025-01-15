@@ -111,4 +111,10 @@ const handleSearch = () => {
 .navbar-nav .nav-item .nav-link.active {
   color: #007BFF;
 }
+
+.navbar-nav .nav-item .nav-link {
+  min-width: 100px; /* Tab 寬度 */
+  text-align: center; /* 文字置中 */
+}
+
 </style>
