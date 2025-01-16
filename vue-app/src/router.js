@@ -13,7 +13,7 @@ const routes = [
     //http://localhost:5173/BonusMall => BonusMallView.vue
     { path: "/BonusMall", component: BonusMallView, name: "BonusMall" },
 
-    //http://localhost:5173/BonusMallHistory => BonusMallView.vue
+    //http://localhost:5173/BonusMallHistory => BonusMallHistoryView.vue
     { path: "/BonusMallHistory", component: BonusMallHistoryView, name: "BonusMallHistory" },
 
 ]
