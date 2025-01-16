@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "./views/HomeView.vue";
 import BonusMallView from "./views/BonusMallView.vue";
+import BonusMallHistoryView from "./views/BonusMallHistoryView.vue";
 
 //路由設定
 //URL => Component
@@ -11,6 +12,9 @@ const routes = [
 
     //http://localhost:5173/BonusMall => BonusMallView.vue
     { path: "/BonusMall", component: BonusMallView, name: "BonusMall" },
+
+    //http://localhost:5173/BonusMallHistory => BonusMallView.vue
+    { path: "/BonusMallHistory", component: BonusMallHistoryView, name: "BonusMallHistory" },
 
 ]
 

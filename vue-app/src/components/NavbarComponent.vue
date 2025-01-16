@@ -25,6 +25,21 @@
             <RouterLink :to="{ name: 'home' }" class="nav-link active">首頁</RouterLink>
           </li>
 
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            保險領好康
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+            <RouterLink :to="{ name: 'BonusMall' }" class="nav-link">紅利商城</RouterLink>
+            </li>
+            <li class="nav-item">
+            <RouterLink :to="{ name: 'BonusMallHistory' }" class="nav-link">兌換紀錄</RouterLink>
+            </li>
+          </ul>
+        </li>
+
           <li class="nav-item">
             <RouterLink :to="{ name: 'BonusMall' }" class="nav-link">紅利商城</RouterLink>
           </li>
