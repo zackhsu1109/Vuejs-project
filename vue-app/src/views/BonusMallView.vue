@@ -7,6 +7,12 @@ import TrafficProductComponent from '@/components/TrafficProductComponent.vue';
 import SearchResultComponent from '@/components/SearchResultComponent.vue'; // 新增的搜尋結果組件
 import { ref } from 'vue';
 
+import {useClaimsStatusShowStore} from '../stores/ClaimsStatusShowStore.js'
+
+const store = useClaimsStatusShowStore();
+
+console.log(`http://localhost:8081/api/bonusproduct/${store.id}`)
+
 const tabs = ref([
     { name: '精選商品', component: FeaturedProductComponent },
     { name: '全部商品', component: AllBonusMallProductComponent },

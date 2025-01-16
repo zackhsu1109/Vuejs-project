@@ -4,8 +4,15 @@ import router from './router' //匯入路由設定 //vue-router
 
 //pinia
 import { createPinia } from 'pinia'
+
+//++
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+
+
 const pinia = createPinia()
 
+//++
+pinia.use(piniaPluginPersistedstate);
 
 const vueApp = createApp(App) //建立Vue的應用程式
 vueApp.use(router) //使用路由
