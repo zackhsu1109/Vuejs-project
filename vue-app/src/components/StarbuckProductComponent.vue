@@ -2,6 +2,10 @@
   <div>
       <div class="row mt-4"></div> <!--往下一點-->
 
+      <h3 class="title">星巴克</h3>
+
+    <div class="row mt-4"></div> <!--往下一點-->
+
       <div class="row">
           <div class="col-3" v-for="product in paginatedProducts" :key="product.productno">
               <div class="card" style="width: 18rem; border: none;">
@@ -100,6 +104,12 @@ export default {
 </script>
 
 <style scoped>
+
+.title {
+  color: #DB5009; 
+  font-weight: bold;
+}
+
 .card {
   margin-bottom: 20px;
 }
