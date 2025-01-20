@@ -1,11 +1,40 @@
 <template>
+
+  <div class="row mt-4"></div> <!--往下一點-->
+    
     <div>
+  
+      <swiper
+      :loop="true"
+      :navigation="false"
+      :modules="modules"
+      :pagination="{ clickable: true }"
+      :slides-per-view="1"
+      :space-between="10"
+      :autoplay="{ delay: 2500, disableOnInteraction: false }"
+      @slideChange="onSlideChange"
+      class="mySwiper"
+    >
+      <swiper-slide>
+        <img :src="'https://media.istockphoto.com/id/1483875169/zh/%E5%90%91%E9%87%8F/coffee-to-go-or-take-away-poster-or-flyer-set-or-coffee-shop-menu-cover-bright-colored-design.jpg?s=612x612&w=0&k=20&c=CvK98HY_QNOfU9p7m9ZgSfXku5-YQKoSXNLVPvzK0bc='" class="slide-image" alt="product advertisement">
+      </swiper-slide>
+  
+      <swiper-slide>
+        <img :src="'https://media.istockphoto.com/id/1183349783/zh/%E5%90%91%E9%87%8F/%E5%92%96%E5%95%A1%E5%BA%97-%E5%B0%8F%E5%9E%8B%E4%BC%81%E6%A5%AD%E5%9C%96%E5%BD%A2-%E5%92%96%E5%95%A1.jpg?s=612x612&w=0&k=20&c=5kL-juMUze6ZEDZBgLN_ZQSQ_gO0WHC8t2RmeLss5kY='" class="slide-image" alt="product advertisement">
+      </swiper-slide>
+  
+      <swiper-slide>
+        <img :src="'https://media.istockphoto.com/id/1877908749/zh/%E5%90%91%E9%87%8F/realistic-coffee-cup-vector-banner.jpg?s=612x612&w=0&k=20&c=iwwo2w0eN3Ia-HH6Dh7m8Uw8VsFlY2oyImeVUBqq-bU='" class="slide-image" alt="product advertisement">
+      </swiper-slide>
+  
+    </swiper>
+  
       <div class="row mt-4"></div> <!--往下一點-->
   
       <h3 class="title">推薦商品</h3>
-
+  
       <div class="row mt-4"></div> <!--往下一點-->
-
+  
       <div class="row">
         <div class="col-3" v-for="product in paginatedProducts" :key="product.productno">
           <div class="card" style="width: 18rem; border: none;">
@@ -30,7 +59,34 @@
   </template>
   
   <script>
+  // Import Swiper Vue.js components
+  import { Swiper, SwiperSlide } from "swiper/vue";
+  
+  // Import Swiper styles
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/pagination";
+  
+  // import required modules 
+  import { Autoplay, Navigation, Pagination } from "swiper/modules";
+  
   export default {
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      const onSlideChange = () => {
+        console.log("slide change");
+      };
+      return {
+        onSlideChange,
+        modules: [Autoplay, Navigation, Pagination],
+      };
+    },
+  
+  //上面是廣告輪播插件
+  
     data() {
       return {
         products: [], // 存放從後端獲取的商品資料
@@ -86,12 +142,17 @@
   </script>
   
   <style scoped>
-
-.title {
+  
+  .slide-image{
+    width: 1280px;
+    height: 400px;
+  }
+  
+  .title {
   color: #DB5009; 
   font-weight: bold;
-}
-
+  }
+  
   .card {
     margin-bottom: 20px;
   }
@@ -125,4 +186,3 @@
     background-color: #007BFF;
   }
   </style>
-  
