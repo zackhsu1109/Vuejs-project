@@ -1,18 +1,10 @@
 <script setup>
-import FeaturedProductComponent from '@/components/FeaturedProductComponent.vue';
-import AllBonusMallProductComponent from '@/components/AllBonusMallProductComponent.vue';
-import LifeProductComponent from '@/components/LifeProductComponent.vue';
-import StarbuckProductComponent from '@/components/StarbuckProductComponent.vue';
-import TrafficProductComponent from '@/components/TrafficProductComponent.vue';
 import SearchResultComponent from '@/components/SearchResultComponent.vue'; // 新增的搜尋結果組件
+import TestComponent from '@/components/TestComponent.vue';
 import { ref } from 'vue';
 
 const tabs = ref([
-    { name: '精選商品', component: FeaturedProductComponent },
-    { name: '全部商品', component: AllBonusMallProductComponent },
-    { name: '便利生活', component: LifeProductComponent },
-    { name: '星巴克', component: StarbuckProductComponent },
-    { name: '旅遊交通', component: TrafficProductComponent },
+    { name: '精選商品', component: TestComponent },
     { name: '', component: SearchResultComponent }, // 搜尋結果 tab 不顯示文字
 ]);
 
